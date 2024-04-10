@@ -1,0 +1,82 @@
+name: Deploy static content to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    # environment:
+    #   name: github-pages
+    #   url: ${{ steps.deployment.outputs.page_url }}accordion
+    # needs: build
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # landing-page
+      - name: Build and Deploy landing-page
+        run: |
+          cd landing-page
+          npm install && npm run build
+          cd ..
+          mkdir -p deploy/landing-page
+          cp -r landing-page/build/* deploy/landing-page/
+      # tic-tac-toe
+      - name: Build and Deploy tic-tac-toe
+        run: |
+          cd tic-tac-toe
+          npm install && npm run build
+          cd ..
+          mkdir -p deploy/tic-tac-toe
+          cp -r tic-tac-toe/build/* deploy/tic-tac-toe/
+      # guess-word
+      - name: Build and Deploy guess-word
+        run: |
+          cd guess-word
+          npm install && npm run build
+          cd ..
+          mkdir -p deploy/guess-word
+          cp -r guess-word/build/* deploy/guess-word/
+      # accordion
+      - name: Build and Deploy accordion
+        run: |
+          cd accordion
+          npm install && npm run build
+          cd ..
+          mkdir -p deploy/accordion
+          cp -r accordion/build/* deploy/accordion/
+      # tree
+      - name: Build and Deploy tree
+        run: |
+          cd tree
+          npm install && npm run build
+          cd ..
+          mkdir -p deploy/tree
+          cp -r tree/build/* deploy/tree/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./deploy"
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

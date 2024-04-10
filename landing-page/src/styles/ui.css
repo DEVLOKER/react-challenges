@@ -1,0 +1,119 @@
+.page-wrapper {
+    width: 100%;
+    height: 100vh;
+}
+
+.page-content {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 100%;
+}
+
+.left-content,
+.right-content {
+    position: relative;
+    display: flex;
+    flex: 1;
+    padding: 1.5rem;
+}
+
+.left-content {
+}
+
+.left-content .backdrop {
+    background: #f0eff020;
+    backdrop-filter: blur(10px);
+    flex: 1;
+}
+.left-content h1,
+.left-content p {
+    color: #37474f;
+}
+.button {
+    padding: 10px 20px;
+    background: #23a6d5;
+    /* background: #37474f; */
+    font-size: larger;
+    font-weight: 500;
+    color: aliceblue;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+}
+.button:hover {
+    box-shadow: 0px 0px 5px 1px #23a6d588;
+}
+
+.right-content {
+    background-image: url("../assets/teamwork-3213924_1280.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    justify-content: center;
+    align-items: center;
+}
+.right-content * {
+    color: #fff;
+    z-index: 1;
+}
+
+.right-content::after {
+    content: " ";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #23a6d5aa;
+    width: 100%;
+    height: 100%;
+}
+
+.circle {
+    position: absolute;
+    z-index: 0;
+    background: linear-gradient(-45deg, #23a6d5, #f0f8ff, #234059);
+    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+.circle1 {
+    width: 150px;
+    height: 120px;
+    border-radius: 50% 40%;
+    top: 50px;
+    right: 50%;
+}
+
+.circle2 {
+    width: 100px;
+    height: 120px;
+    border-radius: 50% 40%;
+    right: 50px;
+    top: 50%;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* @media screen and (max-width: 1000px) { */
+    .page-content {
+        flex-direction: column-reverse;
+    }
+
+    /* .left-content,
+    .right-content {
+    } */
+}

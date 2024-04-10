@@ -1,0 +1,80 @@
+.left-side {
+    padding: 1.5rem;
+    /* background-color: rgba(30, 110, 210, 0.2); aliceblue */
+    background-color: #12345612;
+    flex: 1 1 auto;
+    transition: all 0.2s;
+    box-shadow: 5px 0px 5px 1px #ddd;
+}
+
+.left-side .fixed-container-wrapper {
+    position: sticky;
+    top: 115px;
+}
+.menu-container {
+    height: calc(
+        100vh - 115px - 1.5rem - 28px
+    ); /* 115px => top,  1.5rem => padding-top, 28px => text-header-height  */
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.menu-container:hover {
+    overflow-y: scroll;
+}
+
+.open-close {
+    position: relative;
+    width: 100%;
+}
+
+.open-close button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    border-width: 1px;
+    padding: 5px;
+    cursor: pointer;
+    background: #fff;
+}
+.open-close button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.toggle-container {
+    width: auto;
+    display: block;
+    opacity: 1;
+    transition: all 0.2s;
+}
+
+.left-side.close {
+    flex: 0 0 auto;
+}
+
+.left-side.close .open-close button {
+    right: -15px;
+}
+
+.left-side.close .toggle-container {
+    width: 0;
+    display: none;
+    opacity: 0;
+}
+
+.item {
+    cursor: pointer;
+    padding: 10px 10px;
+    margin-top: 10px;
+    background-color: #fff;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}

@@ -1,0 +1,15 @@
+.page-main {
+    display: flex;
+}
+
+@media screen and (max-width: 768px) {
+    .right-side {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .left-side {
+        display: none;
+    }
+}

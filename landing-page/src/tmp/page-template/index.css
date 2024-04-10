@@ -1,0 +1,204 @@
+:root {
+    --default-padding: 10px;
+}
+
+* {
+}
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/* 
+=================================================================
+    Header
+=================================================================
+*/
+
+.page-header {
+    position: sticky;
+    padding: var(--default-padding);
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.header-nav-list > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav-list > ul > li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+/* 
+=================================================================
+    Main
+=================================================================
+*/
+
+.page-content {
+    display: flex;
+    gap: 0px;
+}
+
+.page-left-sidebar > section,
+.page-right-content > section {
+    position: sticky;
+    top: 110px;
+}
+
+/* 
+=================================================================
+    Left Sidebar
+=================================================================
+*/
+
+.page-left-sidebar {
+    flex: 1 1 150px;
+    padding: var(--default-padding);
+    background-color: antiquewhite;
+    /* position: relative; */
+    transition: width 0.2s, flex 0.2s;
+}
+.page-left-sidebar .btn-box {
+    position: relative;
+}
+
+.page-left-sidebar #btn-open-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.page-left-sidebar.close {
+    flex: 0 0 20px;
+    width: 20px;
+}
+
+.page-left-sidebar.close .list-box {
+    display: none;
+}
+
+/* 
+=================================================================
+    Centered content
+=================================================================
+*/
+
+.page-center-content {
+    flex: 4 4 200px;
+    padding: var(--default-padding);
+    background-color: aquamarine;
+}
+
+.page-center-content article {
+    width: 100%;
+    height: 200px;
+    color: white;
+    background-color: darkolivegreen;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-center-content .main-title {
+    position: sticky;
+    top: 78px;
+    padding: var(--default-padding);
+    background-color: #7fffd43b;
+    backdrop-filter: blur(10px);
+}
+
+/* 
+=================================================================
+    Right content
+=================================================================
+*/
+
+.page-right-content {
+    flex: 1 1 200px;
+    padding: var(--default-padding);
+    background-color: coral;
+}
+
+.page-right-content article {
+    /* width: 100%; */
+    padding: 10px;
+    color: white;
+    background-color: blueviolet;
+    margin: 10px auto;
+}
+
+/* 
+=================================================================
+    Footer
+=================================================================
+*/
+
+.page-footer {
+    display: flex;
+    justify-content: space-around;
+    padding: var(--default-padding);
+    background-color: darkgray;
+}
+
+/* 
+=================================================================
+    Mobile responsive
+=================================================================
+*/
+
+@media only screen and (max-width: 768px) {
+    .page-content {
+        flex-direction: column;
+    }
+    .page-left-sidebar {
+        display: none;
+    }
+    .page-center-content {
+    }
+    .page-right-content {
+        display: none;
+    }
+
+    .page-left-sidebar > section,
+    .page-right-content > section {
+        position: static;
+    }
+
+    .page-left-sidebar #btn-open-close {
+        display: none;
+    }
+}
+
+/* 
+=================================================================
+    Tablet responsive
+=================================================================
+*/
+
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .page-content {
+        flex-direction: row;
+    }
+    .page-left-sidebar {
+        display: none;
+    }
+    .page-center-content {
+    }
+    .page-right-content {
+    }
+
+    .page-left-sidebar #btn-open-close {
+        display: none;
+    }
+}

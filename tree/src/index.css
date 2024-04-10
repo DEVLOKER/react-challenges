@@ -1,0 +1,63 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: #242424;
+    background-color: rgba(255, 255, 255, 0.87);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    align-items: start;
+    min-width: 320px;
+    min-height: 100vh;
+}
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.tree-element {
+    display: flex;
+    justify-content: start;
+    align-items: baseline;
+    flex-direction: column;
+}
+
+.tree-element .parent {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    padding: 4px;
+}
+
+.tree-element .open-close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    background: #eee;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.tree-element .name {
+    font-weight: bolder;
+}
+.tree-element .children {
+    padding-left: 20px;
+}

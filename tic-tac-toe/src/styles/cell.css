@@ -1,0 +1,26 @@
+.cell {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    font-weight: bolder;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.cell.idle {
+    background: white;
+    cursor: pointer;
+}
+
+.cell.X {
+    color: red;
+    pointer-events: none;
+}
+
+.cell.O {
+    color: blue;
+    pointer-events: none;
+}

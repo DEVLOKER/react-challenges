@@ -1,0 +1,15 @@
+.game-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.game-info table {
+    transform: scale(0.6);
+}
+
+.message-info {
+    text-align: center;
+}

@@ -1,0 +1,21 @@
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    width: 60px;
+    height: 60px;
+    font-size: larger;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.correct {
+    color: green;
+    background-color: rgba(0, 128, 0, 0.2);
+}
+
+.incorrect {
+    color: red;
+    background-color: rgba(128, 0, 0, 0.2);
+}
