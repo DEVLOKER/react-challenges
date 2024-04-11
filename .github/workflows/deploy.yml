@@ -16,11 +16,6 @@ concurrency:
 
 jobs:
   deploy:
-    # environment:
-    #   name: github-pages
-    #   url: ${{ steps.deployment.outputs.page_url }}accordion
-    # needs: build
-
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,40 +25,40 @@ jobs:
         with:
           node-version: 20
 
-      # landing-page
-      - name: Build and Deploy landing-page
+      # landing-page project
+      - name: Build landing-page
         run: |
           cd landing-page
           npm install && npm run build
           cd ..
           mkdir -p deploy/landing-page
           cp -r landing-page/build/* deploy/landing-page/
-      # tic-tac-toe
-      - name: Build and Deploy tic-tac-toe
+      # tic-tac-toe project
+      - name: Build tic-tac-toe
         run: |
           cd tic-tac-toe
           npm install && npm run build
           cd ..
           mkdir -p deploy/tic-tac-toe
           cp -r tic-tac-toe/build/* deploy/tic-tac-toe/
-      # guess-word
-      - name: Build and Deploy guess-word
+      # guess-word project
+      - name: Build guess-word
         run: |
           cd guess-word
           npm install && npm run build
           cd ..
           mkdir -p deploy/guess-word
           cp -r guess-word/build/* deploy/guess-word/
-      # accordion
-      - name: Build and Deploy accordion
+      # accordion project
+      - name: Build accordion
         run: |
           cd accordion
           npm install && npm run build
           cd ..
           mkdir -p deploy/accordion
           cp -r accordion/build/* deploy/accordion/
-      # tree
-      - name: Build and Deploy tree
+      # tree project
+      - name: Build tree
         run: |
           cd tree
           npm install && npm run build
